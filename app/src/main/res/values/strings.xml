@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="demo_content">Lorem ipsum dolor sit amet, consectetur\n adipiscing elit. Vivamus sodales faucibus\n dapibus. Etiam mattis leo quis laoreet dictum.</string>
+    <string name="demo_title">Lorem Ipsum</string>
+    <string name="next">Next</string>
+    <string name="onboarding1_title">Track your workouts</string>
+    <string name="onboarding1_desc">Keep track of your workouts exercice and get instant insights of your gym journey </string>
+    <string name="onboarding2_title">Workouts exercices</string>
+    <string name="onboarding2_desc">Lots of exercises with 3000+ possible variations, Rich photos and hi-res videos of each exercise</string>
+    <string name="onboarding3_title">Workout routines</string>
+    <string name="onboarding3_desc">Multiple gym workout routines to choose from,Specific muscle-focused workouts and full body workouts designed to get you toned and strong</string>
+    <string name="onboarding4_title">Start now</string>
+    <string name="onboarding4_desc">Create account or Sign in and start your gym journey now </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Layout.MusculeDesc">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            android:background="@drawable/image_button_border"
+            android:id="@+id/backBtn"
+            android:paddingVertical="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="7dp"
+            android:layout_margin="20dp"
+            />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/favorite"
+            android:src="@drawable/star"
+            android:background="@drawable/image_button_border"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exerciceBodyPart"
+            android:layout_toRightOf="@id/backBtn"
+            android:layout_toLeftOf="@id/favorite"
+            android:textAlignment="center"
+            android:layout_marginTop="29dp"
+            android:textSize="17dp"
+            android:textColor="@color/black"
+            android:text="chest workout"
+            android:fontFamily="@font/poppins_regular"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gifImage"
+            android:layout_below="@id/favorite"
+            android:layout_marginTop="10dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gifImage"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round_rect_shape"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/exerciceName"
+            android:text="workout name"
+
+            android:layout_marginTop="15dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:textAlignment="center"
+
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/exerciceName"
+            android:id="@+id/information"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:weightSum="2"
+            android:gravity="center"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+
+
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dumbbell"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="equipment:"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="13dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cable"
+                    android:id="@+id/exerciceEquipement"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="13dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/target" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="taget:"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="13dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cable"
+                    android:id="@+id/exercicetarget"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="13dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/exercicerep"
+            android:text="x3 rep"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="15dp"
+            android:layout_below="@id/information"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            ></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/counter"
+            android:textSize="40dp"
+            android:text="00:00"
+            android:layout_below="@id/exercicerep"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="10dp"
+            ></TextView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/counterStrat"
+            android:layout_below="@id/counter"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="#4fc59b"
+            android:text="Strat"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="10dp"
+
+            />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>

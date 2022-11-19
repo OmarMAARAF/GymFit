@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.Home">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/avatr"
+            android:src="@drawable/avtar"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/calendar"
+            android:background="@drawable/image_button_border"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="33dp"
+            android:layout_marginRight="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hello"
+            android:text="Hello Omar 👋"
+
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="20dp"
+            android:layout_toRightOf="@id/avatr"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="10dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good Morning"
+            android:layout_below="@id/hello"
+            android:layout_toRightOf="@id/avatr"
+            android:layout_marginLeft="10dp"
+            />
+
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/avatr"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/round_rect_shape"
+            android:drawableLeft="@drawable/ic_baseline_search_24"
+            android:drawablePadding="8dp"
+            android:hint="Search a workout" />
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollmuscles"
+            android:layout_below="@id/search_bar"
+            android:paddingHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:scrollbars="none"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#4fc59b"
+                    android:drawableTop="@drawable/chest"
+                    app:cornerRadius="10dp"
+                    android:gravity="center"
+                    android:text="Chest"
+                    android:id="@+id/chestBtn"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="20dp"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="#4fc59b"
+                    android:drawableTop="@drawable/back"
+                    android:gravity="center"
+                    android:text="Back"
+                    android:id="@+id/backBtn"
+                    android:textColor="@color/black"
+                    app:cornerRadius="10dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#4fc59b"
+                    android:drawableTop="@drawable/abs"
+                    app:cornerRadius="10dp"
+                    android:gravity="center"
+                    android:text="abs"
+                    android:id="@+id/absBtn"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="20dp"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#4fc59b"
+                    android:drawableTop="@drawable/legs"
+                    app:cornerRadius="10dp"
+                    android:gravity="center"
+                    android:text="Legs"
+                    android:id="@+id/legsBtn"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#4fc59b"
+                    android:drawableTop="@drawable/biceps1"
+                    app:cornerRadius="10dp"
+                    android:gravity="center"
+                    android:text="Biceps"
+                    android:id="@+id/bicepsBtn"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="20dp"
+                    />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/todaytextView"
+            android:text="Today :"
+            android:textColor="@color/black"
+            android:textSize="27dp"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_below="@id/scrollmuscles"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="20dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/todayinfo"
+            android:layout_below="@id/todaytextView"
+            android:layout_marginTop="20dp"
+            android:paddingVertical="10dp"
+            android:background="@drawable/round_rect_shape"
+            android:layout_marginHorizontal="20dp"
+
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/todayicon"
+                android:src="@drawable/today"
+                android:layout_marginLeft="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/todayscence"
+                android:text="Sceance Name"
+                android:textSize="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginHorizontal="20dp"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@id/todayicon"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 feb 2021 16:00 - 17:00"
+                android:textSize="13dp"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginHorizontal="20dp"
+                android:textColor="#459173"
+                android:layout_below="@id/todayscence"
+                android:layout_toRightOf="@id/todayicon"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginHorizontal="10dp"
+                />
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</FrameLayout>
