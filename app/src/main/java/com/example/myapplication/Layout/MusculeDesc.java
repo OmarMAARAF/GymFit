@@ -109,8 +109,9 @@ public class MusculeDesc extends AppCompatActivity {
                         //counter.setVisibility(View.GONE);
                         counterStrat.setEnabled(true);
                         mp.stop();
-                        if(--repN!=0){
-                            rep.setText("x"+(--repN)+" rep");
+                        repN=repN-1;
+                        if(repN==0){
+                            rep.setText("x"+(repN)+" rep");
                         }else {
                             dialog.setContentView(R.layout.dialog_congratulations);
                             dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
