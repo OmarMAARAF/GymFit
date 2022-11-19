@@ -2,6 +2,7 @@ package com.example.myapplication.Layout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.util.TimeUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -32,6 +34,7 @@ public class MusculeDesc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_muscule_desc);
+        Dialog dialog = new Dialog(MusculeDesc.this);
         //set text for equipement
         TextView equipement =(TextView) findViewById(R.id.exerciceEquipement);
         String equipementI = getIntent().getStringExtra("equipement");
@@ -89,6 +92,8 @@ public class MusculeDesc extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
                 counterStrat.setEnabled(false);
                 new CountDownTimer(duration, 1000) {
 
@@ -104,22 +109,26 @@ public class MusculeDesc extends AppCompatActivity {
                         //counter.setVisibility(View.GONE);
                         counterStrat.setEnabled(true);
                         mp.stop();
-                        rep.setText("x"+(--repN)+" rep");
-                        new FancyGifDialog.Builder(getApplicationContext())
-                                .setTitle("Granny eating chocolate dialog box")
-                                .setMessage("This is a granny eating chocolate dialog box. This library is used to help you easily create fancy gify dialog.")
-                                .setTitleTextColor(R.color.black)
-                                .setDescriptionTextColor(R.color.black)
-                                .setPositiveBtnText("Done")
-                                .setPositiveBtnBackground(R.color.primary)
-                                .setGifResource(R.drawable.trophy)   //Pass your Gif here
-                                .OnPositiveClicked(new FancyGifDialogListener() {
-                                    @Override
-                                    public void OnClick() {
+                        if(--repN!=0){
+                            rep.setText("x"+(--repN)+" rep");
+                        }else {
+                            dialog.setContentView(R.layout.dialog_congratulations);
+                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                            dialog.setCancelable(false);
+                            dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
+                            Button okay_text = dialog.findViewById(R.id.congratDone);
+                            okay_text.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialog.dismiss();
+                                    MusculeDesc.this.onBackPressed();
 
-                                    }
-                                })
-                                .build();
+                                }
+                            });
+                            dialog.show();
+                        }
+
+
 
                     }
                 }.start();
@@ -128,4 +137,5 @@ public class MusculeDesc extends AppCompatActivity {
         }));
 
     }
+
 }

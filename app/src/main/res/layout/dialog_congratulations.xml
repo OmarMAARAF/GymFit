@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/trophypic"
+        android:src="@drawable/trophy"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/congratText"
+        android:layout_below="@id/trophypic"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:text="congratulation"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/congratText"
+        android:id="@+id/contartDesc"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:text="congrat a khoya"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/congratDone"
+        android:text="Done"
+        android:layout_below="@id/contartDesc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_regular"
+        android:textAllCaps="false"
+        android:backgroundTint="#4fc59b"
+        />
+
+
+
+
+
+
+</RelativeLayout>
