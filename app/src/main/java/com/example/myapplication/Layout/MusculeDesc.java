@@ -96,8 +96,6 @@ public class MusculeDesc extends AppCompatActivity {
                     public void onTick(long l) {
                         String sDuration =String.format(Locale.ENGLISH,"%02d : %02d",TimeUnit.MILLISECONDS.toMinutes(l),
                                 TimeUnit.MILLISECONDS.toSeconds(l)-TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(l)));
-                        //set Converted string
-                        Log.i("here",sDuration);
                         counter.setText(String.valueOf(sDuration));
                     }
 
