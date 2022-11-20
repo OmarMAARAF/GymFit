@@ -66,7 +66,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/selectedDay"
+            android:id="@+id/pushDay"
         android:text="Push Day"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:drawableLeft="@drawable/workoutday1"
+            android:drawablePadding="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pullDay"
+            android:layout_below="@id/selectedDay"
+            android:text="Pull Day"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:drawableLeft="@drawable/workoutday1"
+            android:drawablePadding="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/legsDay"
+            android:layout_below="@id/selectedDay"
+            android:text="Legs Day"
             android:layout_marginLeft="30dp"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/black"
@@ -86,6 +119,14 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="30dp"
             />
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pushDay"
+            android:id="@+id/calendarPushlistView"
+            android:layout_marginTop="20dp"/>
+
+
     </RelativeLayout>
 
 </ScrollView>

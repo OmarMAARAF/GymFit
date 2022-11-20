@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.Layout.CalendarActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.muscleActivity;
 
@@ -17,6 +19,7 @@ public class Home extends AppCompatActivity {
     Button absBtn;
     Button legsBtn;
     Button bicepsBtn;
+    ImageButton calendarbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,15 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i =new Intent(getApplicationContext(),muscleActivity.class);
                 i.putExtra("muscle","back");
+                startActivity(i);
+            }
+        }));
+        //calendar activity
+        calendarbtn =(ImageButton)findViewById(R.id.calendarbtn);
+        calendarbtn.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(getApplicationContext(), CalendarActivity.class);
                 startActivity(i);
             }
         }));

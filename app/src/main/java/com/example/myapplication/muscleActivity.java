@@ -137,17 +137,7 @@ public class muscleActivity extends AppCompatActivity {
 
 
     private List<Muscle> getListData() {
-        /*List<Muscle> list = new ArrayList<Muscle>();
-        Muscle usa = new Muscle("United States", "us");
-        Muscle russia = new Muscle("Russia", "ru");
 
-
-        list.add( new Muscle("Vietnam", "Mok"));
-        list.add(usa);
-        list.add(russia);
-
-        */
-        Log.i("here 2",list.toString());
         return list;
     }
 }
