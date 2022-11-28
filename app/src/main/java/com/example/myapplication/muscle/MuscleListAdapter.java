@@ -48,12 +48,6 @@ public class MuscleListAdapter  extends BaseAdapter {
             holder =new ViewHolder();
             holder.gifUrl = (ImageView) convertView.findViewById(R.id.imageView);
             holder.name=(TextView) convertView.findViewById(R.id.textView_name);
-           /* holder.equipment = (TextView) convertView.findViewById(R.id.textView_equipement);
-            holder.bodyPart = (TextView) convertView.findViewById(R.id.textView_bodyPart);
-            holder.id=(TextView) convertView.findViewById(R.id.textView_id);
-
-            holder.target=(TextView) convertView.findViewById(R.id.textView_target);*/
-
 
             convertView.setTag(holder);
         } else {

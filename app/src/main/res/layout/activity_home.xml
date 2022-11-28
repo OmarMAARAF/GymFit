@@ -16,7 +16,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/calendarbtn"
+            android:id="@+id/homeCalendarBtn"
             android:src="@drawable/calendar"
             android:background="@drawable/image_button_border"
             android:padding="10dp"
@@ -46,7 +46,6 @@
                 android:layout_toRightOf="@id/avatr"
             android:layout_marginLeft="10dp"
                 />
-
         <EditText
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
@@ -57,7 +56,9 @@
             android:background="@drawable/round_rect_shape"
             android:drawableLeft="@drawable/ic_baseline_search_24"
             android:drawablePadding="8dp"
-            android:hint="Search a workout" />
+            android:hint="Search a workout"
+            android:imeOptions="actionSearch"
+            android:inputType="text"/>
         <HorizontalScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

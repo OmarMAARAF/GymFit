@@ -32,7 +32,8 @@
         android:fontFamily="@font/poppins_regular"
         android:textSize="18dp"
         android:textColor="@color/black"
-        android:text="congrat a khoya"/>
+        android:text="you're one step close, Keep Up!"
+        android:layout_marginTop="10dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,7 +41,7 @@
         android:text="Done"
         android:layout_below="@id/contartDesc"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_regular"
         android:textAllCaps="false"

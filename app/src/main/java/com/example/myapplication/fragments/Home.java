@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.Layout.CalendarActivity;
+import com.example.myapplication.Layout.CalendarViewActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.muscleActivity;
 
@@ -19,7 +20,7 @@ public class Home extends AppCompatActivity {
     Button absBtn;
     Button legsBtn;
     Button bicepsBtn;
-    ImageButton calendarbtn;
+    ImageButton calendarBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +44,11 @@ public class Home extends AppCompatActivity {
             }
         }));
         //calendar activity
-        calendarbtn =(ImageButton)findViewById(R.id.calendarbtn);
-        calendarbtn.setOnClickListener((new View.OnClickListener() {
+        calendarBtn =(ImageButton)findViewById(R.id.homeCalendarBtn);
+        calendarBtn.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =new Intent(getApplicationContext(), CalendarActivity.class);
+                Intent i =new Intent(getApplicationContext(), CalendarViewActivity.class);
                 startActivity(i);
             }
         }));
@@ -75,6 +76,15 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i =new Intent(getApplicationContext(),muscleActivity.class);
                 i.putExtra("muscle","upper arms");
+                startActivity(i);
+            }
+        }));
+        //today Layout
+        RelativeLayout todayLayout =(RelativeLayout)findViewById(R.id.todayinfo);
+        todayLayout.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(getApplicationContext(), CalendarViewActivity.class);
                 startActivity(i);
             }
         }));
