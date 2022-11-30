@@ -2,14 +2,20 @@ package com.example.myapplication.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.Layout.CalendarViewActivity;
+import com.example.myapplication.Layout.SearchActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.muscleActivity;
 
@@ -21,6 +27,7 @@ public class Home extends AppCompatActivity {
     Button legsBtn;
     Button bicepsBtn;
     ImageButton calendarBtn;
+    EditText search_bar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +95,22 @@ public class Home extends AppCompatActivity {
                 startActivity(i);
             }
         }));
+        //Search
+        Intent searchIntent =new Intent(getApplicationContext(), SearchActivity.class);
+        search_bar =(EditText)findViewById(R.id.search_bar);
+        search_bar.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+
+                    searchIntent.putExtra("search",search_bar.getText().toString());
+                    startActivity(searchIntent);
+                    return true;
+                }
+                return false;
+            }
+
+        });
 
 
     }

@@ -14,10 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Layout.SearchActivity"></activity>
+        <activity android:name=".Layout.BookmarkActivity"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".Layout.SearchActivity" />
         <activity
             android:name=".Layout.CalendarViewActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".Layout.MusculeDesc" />
         <activity
             android:name=".muscleActivity"

@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -14,7 +15,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.myapplication.DBHelper.DBHelper;
 import com.example.myapplication.R;
+import com.example.myapplication.muscle.Muscle;
 
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -51,16 +54,32 @@ public class MusculeDesc extends AppCompatActivity {
                 .into(gif);
         //favorite btn
         ImageButton favorite =(ImageButton)findViewById(R.id.favorite);
+        DBHelper DB =new DBHelper(this);
+       String idI= getIntent().getStringExtra("id");
+        Boolean checkBookMark=DB.checkBookmark(1,idI);
+        if(checkBookMark){
+            favorite.setImageResource(R.drawable.star1);
+            Log.i("test","in bookmark");
+        }
+        else{
+            favorite.setImageResource(R.drawable.star);
+            Log.i("test","not in bookmark");
+        }
+
         favorite.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                favorite.setSelected(!favorite.isPressed());
-                if(favorite.isPressed()){
-                    favorite.setImageResource(R.drawable.star1);
-                }
-                else {
+                Boolean checkBookMark=DB.checkBookmark(1,idI);
+                if(checkBookMark){
+                    Log.i("test","this exercices is alredy in your bookmark List");
+                    DB.deleteBookmark(idI,"1");
                     favorite.setImageResource(R.drawable.star);
                 }
+                else{
+                    DB.addBookmark(new Muscle(bodyPartI,equipementI,gifURL,idI,nameI,targetI),1);
+                    favorite.setImageResource(R.drawable.star1);
+                }
+
 
             }
         }));

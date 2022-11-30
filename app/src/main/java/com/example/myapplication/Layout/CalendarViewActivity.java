@@ -168,6 +168,7 @@ public class CalendarViewActivity extends AppCompatActivity {
                 i.putExtra("equipement",((Muscle) o).getEquipment());
                 i.putExtra("gifURL",((Muscle) o).getGifUrl());
                 i.putExtra("bodyPart",((Muscle) o).getBodyPart());
+                i.putExtra("id",((Muscle) o).getId());
                 startActivity(i);
 
             }
