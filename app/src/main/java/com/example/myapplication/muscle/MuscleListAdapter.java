@@ -18,12 +18,14 @@ public class MuscleListAdapter  extends BaseAdapter {
     private List<Muscle> listData;
     private LayoutInflater layoutInflater;
     private Context context;
+    private String page;
 
 
-    public MuscleListAdapter(Context aContext,  List<Muscle> listData) {
+    public MuscleListAdapter(Context aContext,  List<Muscle> listData,String apage) {
         this.context = aContext;
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
+        this.page =apage;
     }
     @Override
     public int getCount() {
@@ -44,7 +46,13 @@ public class MuscleListAdapter  extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.list_muscules_layout, null);
+            if(page.equals("Muscle")){
+                convertView = layoutInflater.inflate(R.layout.list_muscules_layout, null);
+            }
+            else{
+                convertView = layoutInflater.inflate(R.layout.list_musculescalendar_layout, null);
+            }
+
             holder =new ViewHolder();
             holder.gifUrl = (ImageView) convertView.findViewById(R.id.imageView);
             holder.name=(TextView) convertView.findViewById(R.id.textView_name);

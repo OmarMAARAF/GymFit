@@ -10,7 +10,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#10101C</color>
     <color name="colorAccent">#D81B60</color>
-
+    <color name="bottomBarColor">#4fc59b</color>
     <color name="blackNavy">#10101C</color>
     <color name="next_1">#8B88DC</color>
     <color name="next_2">#0183C5</color>

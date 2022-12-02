@@ -101,7 +101,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Boolean checkBookmark(int userID,String idMuscle ){
         SQLiteDatabase MyDB =this.getWritableDatabase();
-        Cursor cursor =MyDB.rawQuery("select * from "+TABLE_BOOKMAKS +" where +"+USER_ID+" ='?' and "+id+"='?'",new String[] {""+userID+"",idMuscle});
+        Cursor cursor =MyDB.rawQuery("select * from "+TABLE_BOOKMAKS +" where +"+id+" =?",new String[] {idMuscle});
+
         if(cursor.getCount()>0){
             return true;
         }

@@ -95,7 +95,7 @@ public class SearchActivity extends AppCompatActivity {
                     SearchActivity.this.runOnUiThread(() -> {
                         List<Muscle> image_details = getListData();
                         final ListView listView = (ListView) findViewById(R.id.searchListView);
-                        listView.setAdapter(new MuscleListAdapter(SearchActivity.this, image_details));
+                        listView.setAdapter(new MuscleListAdapter(SearchActivity.this, image_details,"Muscle"));
                         // When the user clicks on the ListItem
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

@@ -5,34 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Layout.BookmarkActivity">
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_arrow_back_ios_24"
-        android:background="@drawable/image_button_border"
-        android:id="@+id/bookmarkBackBtn"
-        android:paddingVertical="10dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="7dp"
-        android:layout_margin="20dp"
-        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/searchText"
-        android:layout_toRightOf="@id/bookmarkBackBtn"
+        android:layout_marginHorizontal="20dp"
         android:textAlignment="center"
         android:layout_marginTop="29dp"
         android:textSize="17dp"
         android:textColor="@color/black"
-        android:text="Bookmarks"
+        android:text="Your bookmarks list"
         android:fontFamily="@font/poppins_regular"
         />
-    <ListView
+  <!--  <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/bookmarksListView"
         android:layout_marginTop="80dp"
         />
+        -->
+    <com.baoyz.swipemenulistview.SwipeMenuListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bookmarksListView"
+        android:layout_marginTop="80dp"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/bottomBarColor"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/bottom_navigation_menu" />
 
 </RelativeLayout>

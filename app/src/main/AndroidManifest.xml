@@ -14,9 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Layout.BookmarkActivity"
+        <activity android:name=".Layout.ProfileActivity"></activity>
+        <activity
+            android:name=".Layout.BookmarkActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Layout.SearchActivity" />
         <activity
@@ -28,13 +34,7 @@
             android:exported="true" />
         <activity
             android:name=".fragments.Home"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity android:name=".test" />
         <activity
             android:name=".OnBoarding.OnboardingActivity"

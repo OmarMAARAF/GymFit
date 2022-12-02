@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.myapplication.DBHelper.DBHelper;
@@ -73,10 +74,14 @@ public class MusculeDesc extends AppCompatActivity {
                 if(checkBookMark){
                     Log.i("test","this exercices is alredy in your bookmark List");
                     DB.deleteBookmark(idI,"1");
+                    Toast toast=Toast.makeText(getApplicationContext(),""+nameI+" is deleted from your bookmarks list",Toast.LENGTH_SHORT);
+                    toast.show();
                     favorite.setImageResource(R.drawable.star);
                 }
                 else{
                     DB.addBookmark(new Muscle(bodyPartI,equipementI,gifURL,idI,nameI,targetI),1);
+                    Toast toast=Toast.makeText(getApplicationContext(),""+nameI+" is added to your bookmarks list",Toast.LENGTH_SHORT);
+                    toast.show();
                     favorite.setImageResource(R.drawable.star1);
                 }
 

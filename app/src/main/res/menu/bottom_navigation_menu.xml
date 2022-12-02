@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/page_1"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home"/>
+        android:id="@+id/homeActivity"
+        android:title="Home"
+        android:icon="@drawable/home"/>
     <item
-        android:id="@+id/page_2"
-        android:enabled="true"
-        android:icon="@drawable/calendar"
-        android:title="Calendar"/>
+        android:id="@+id/calendarActivity"
+        android:title="Calendar"
+        android:icon="@drawable/calendar"/>
+
+    <item
+        android:id="@+id/bookmarkActivity"
+        android:title="Bookmark"
+        android:icon="@drawable/star"/>
+    <item
+        android:id="@+id/profilActivity"
+        android:title="Profile"
+        android:icon="@drawable/profile"/>
 </menu>

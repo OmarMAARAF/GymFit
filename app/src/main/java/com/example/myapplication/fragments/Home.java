@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
@@ -12,12 +13,16 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.Layout.BookmarkActivity;
 import com.example.myapplication.Layout.CalendarViewActivity;
+import com.example.myapplication.Layout.ProfileActivity;
 import com.example.myapplication.Layout.SearchActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.muscleActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity {
 
@@ -110,6 +115,44 @@ public class Home extends AppCompatActivity {
                 return false;
             }
 
+        });
+
+        // Initialize and assign variable
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.homeActivity);
+
+        // Perform item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.bookmarkActivity:
+                        Intent i= new Intent(getApplicationContext(),BookmarkActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.homeActivity:
+                        return true;
+                    case R.id.profilActivity:
+                        Intent i1= new Intent(getApplicationContext(),ProfileActivity.class);
+                        i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i1);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.calendarActivity:
+                        Intent i2= new Intent(getApplicationContext(), CalendarViewActivity.class);
+                        i2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i2);
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
         });
 
 

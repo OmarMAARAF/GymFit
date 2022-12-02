@@ -3,6 +3,7 @@ package com.example.myapplication.Layout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
@@ -15,8 +16,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
+import com.example.myapplication.fragments.Home;
 import com.example.myapplication.muscle.Muscle;
 import com.example.myapplication.muscle.MuscleListAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
@@ -41,14 +44,7 @@ public class CalendarViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar_view);
-        //back btn
-        ImageButton backBtn =(ImageButton)findViewById(R.id.calendarbackBtn);
-        backBtn.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CalendarViewActivity.this.onBackPressed();
-            }
-        }));
+
         //init
         TextView selectedDay=(TextView) findViewById(R.id.selectedDay);
         TextView selectedDay1=(TextView) findViewById(R.id.selectedDay1);
@@ -154,7 +150,7 @@ public class CalendarViewActivity extends AppCompatActivity {
         List<Muscle> image_details = getPushListData();
         final ListView listView = (ListView) findViewById(R.id.calendarPushlistView);
 
-        listView.setAdapter(new MuscleListAdapter(CalendarViewActivity.this, image_details));
+        listView.setAdapter(new MuscleListAdapter(CalendarViewActivity.this, image_details,"Muscle"));
         // When the user clicks on the ListItem
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -188,7 +184,7 @@ public class CalendarViewActivity extends AppCompatActivity {
         List<Muscle> image_details_pull = getPullListData();
         final ListView listViewPull = (ListView) findViewById(R.id.calendarPulllistView);
 
-        listViewPull.setAdapter(new MuscleListAdapter(CalendarViewActivity.this, image_details_pull));
+        listViewPull.setAdapter(new MuscleListAdapter(CalendarViewActivity.this, image_details_pull,"Muscle"));
         // When the user clicks on the ListItem
         listViewPull.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -202,6 +198,7 @@ public class CalendarViewActivity extends AppCompatActivity {
                 i.putExtra("equipement",((Muscle) o).getEquipment());
                 i.putExtra("gifURL",((Muscle) o).getGifUrl());
                 i.putExtra("bodyPart",((Muscle) o).getBodyPart());
+                i.putExtra("id",((Muscle) o).getId());
                 startActivity(i);
 
             }
@@ -221,7 +218,7 @@ public class CalendarViewActivity extends AppCompatActivity {
         List<Muscle> image_details_legs = getLegsListData();
         final ListView listViewLegs = (ListView) findViewById(R.id.calendarLegslistView);
 
-        listViewLegs.setAdapter(new MuscleListAdapter(CalendarViewActivity.this, image_details_legs));
+        listViewLegs.setAdapter(new MuscleListAdapter(CalendarViewActivity.this, image_details_legs,"Muscle"));
         // When the user clicks on the ListItem
         listViewLegs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -235,8 +232,49 @@ public class CalendarViewActivity extends AppCompatActivity {
                 i.putExtra("equipement",((Muscle) o).getEquipment());
                 i.putExtra("gifURL",((Muscle) o).getGifUrl());
                 i.putExtra("bodyPart",((Muscle) o).getBodyPart());
+                i.putExtra("id",((Muscle) o).getId());
                 startActivity(i);
 
+            }
+        });
+
+        //bottom Nav bar
+
+        // Initialize and assign variable
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.calendarActivity);
+
+        // Perform item selected listener
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.bookmarkActivity:
+                        Intent i= new Intent(getApplicationContext(),BookmarkActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.calendarActivity:
+                        return true;
+                    case R.id.profilActivity:
+                        Intent i1= new Intent(getApplicationContext(),ProfileActivity.class);
+                        i1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i1);
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.homeActivity:
+                        Intent i2= new Intent(getApplicationContext(), Home.class);
+                        i2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i2);
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
             }
         });
 

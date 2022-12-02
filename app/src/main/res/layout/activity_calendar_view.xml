@@ -6,35 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Layout.CalendarViewActivity">
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_arrow_back_ios_24"
-        android:background="@drawable/image_button_border"
-        android:id="@+id/calendarbackBtn"
-        android:paddingVertical="10dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="7dp"
-        android:layout_margin="20dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bb"
-        android:layout_toRightOf="@id/calendarbackBtn"
-        android:textAlignment="center"
-        android:layout_marginTop="29dp"
-        android:textSize="17dp"
-        android:textColor="@color/black"
-        android:text="Week calendar"
-        android:fontFamily="@font/poppins_regular"
-        />
+
 
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/calendarbackBtn"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_rect_shape"
@@ -192,4 +169,13 @@
             android:layout_below="@id/RestDay"/>
 
     </RelativeLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/bottomBarColor"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:menu="@menu/bottom_navigation_menu" />
 </RelativeLayout>

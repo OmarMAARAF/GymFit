@@ -97,7 +97,7 @@ public class muscleActivity extends AppCompatActivity {
                     muscleActivity.this.runOnUiThread(() -> {
                         List<Muscle> image_details = getListData();
                         final ListView listView = (ListView) findViewById(R.id.chestListView);
-                        listView.setAdapter(new MuscleListAdapter(muscleActivity.this, image_details));
+                        listView.setAdapter(new MuscleListAdapter(muscleActivity.this, image_details,"Muscle"));
                         // When the user clicks on the ListItem
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
