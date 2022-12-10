@@ -101,14 +101,6 @@ public class SearchActivity extends AppCompatActivity {
 
                             @Override
                             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                                /*
-                                Object o = listView.getItemAtPosition(position);
-                Country country = (Country) o;
-
-                 Object o = listView.getItemAtPosition(position);
-                                Muscle muscle = (Muscle) o;
-                                Toast.makeText(muscleActivity.this, "Selected :"+((Muscle) o).getGifUrl(), Toast.LENGTH_LONG).show();
-                                 */
                                 Intent i =new Intent(getApplicationContext(), MusculeDesc.class);
                                 Object o = listView.getItemAtPosition(position);
                                 Muscle muscle = (Muscle) o;
@@ -117,8 +109,8 @@ public class SearchActivity extends AppCompatActivity {
                                 i.putExtra("equipement",((Muscle) o).getEquipment());
                                 i.putExtra("gifURL",((Muscle) o).getGifUrl());
                                 i.putExtra("bodyPart",((Muscle) o).getBodyPart());
+                                i.putExtra("id",((Muscle) o).getId());
                                 startActivity(i);
-
                             }
                         });
 
