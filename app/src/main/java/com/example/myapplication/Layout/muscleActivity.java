@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Layout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,17 +8,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.myapplication.Layout.MusculeDesc;
-import com.example.myapplication.fragments.Home;
-import com.example.myapplication.muscle.Muscle;
-import com.example.myapplication.muscle.MuscleListAdapter;
+import com.example.myapplication.R;
+import com.example.myapplication.Beans.Muscle;
+import com.example.myapplication.Adapters.MuscleListAdapter;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;

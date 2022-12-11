@@ -1,4 +1,4 @@
-package com.example.myapplication.muscle;
+package com.example.myapplication.Beans;
 
 public class Muscle {
     private  String bodyPart;

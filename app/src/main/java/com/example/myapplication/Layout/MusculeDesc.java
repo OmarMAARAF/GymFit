@@ -16,9 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.myapplication.DBHelper.DBHelper;
+import com.example.myapplication.DBHelper.Bookmarks;
 import com.example.myapplication.R;
-import com.example.myapplication.muscle.Muscle;
+import com.example.myapplication.Beans.Muscle;
 
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -55,7 +55,7 @@ public class MusculeDesc extends AppCompatActivity {
                 .into(gif);
         //favorite btn
         ImageButton favorite =(ImageButton)findViewById(R.id.favorite);
-        DBHelper DB =new DBHelper(this);
+        Bookmarks DB =new Bookmarks(this);
        String idI= getIntent().getStringExtra("id");
         Boolean checkBookMark=DB.checkBookmark(1,idI);
         if(checkBookMark){

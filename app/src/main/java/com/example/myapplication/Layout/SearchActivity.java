@@ -12,9 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.muscle.Muscle;
-import com.example.myapplication.muscle.MuscleListAdapter;
-import com.example.myapplication.muscleActivity;
+import com.example.myapplication.Beans.Muscle;
+import com.example.myapplication.Adapters.MuscleListAdapter;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;

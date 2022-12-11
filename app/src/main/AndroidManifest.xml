@@ -18,11 +18,7 @@
         <activity
             android:name=".Layout.BookmarkActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Layout.SearchActivity" />
         <activity
@@ -30,12 +26,17 @@
             android:exported="true" />
         <activity android:name=".Layout.MusculeDesc" />
         <activity
-            android:name=".muscleActivity"
+            android:name=".Layout.muscleActivity"
             android:exported="true" />
         <activity
-            android:name=".fragments.Home"
-            android:exported="true" />
-        <activity android:name=".test" />
+            android:name=".Layout.Home"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".OnBoarding.OnboardingActivity"
             android:exported="true" />

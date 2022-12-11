@@ -1,8 +1,7 @@
-package com.example.myapplication.fragments;
+package com.example.myapplication.Layout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,13 +15,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.myapplication.Layout.BookmarkActivity;
-import com.example.myapplication.Layout.CalendarViewActivity;
-import com.example.myapplication.Layout.ProfileActivity;
-import com.example.myapplication.Layout.SearchActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.muscleActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+
+import java.text.Format;
+import java.text.SimpleDateFormat;
 
 public class Home extends AppCompatActivity {
 
@@ -61,6 +59,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i =new Intent(getApplicationContext(), CalendarViewActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
             }
         }));
@@ -97,6 +96,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i =new Intent(getApplicationContext(), CalendarViewActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
             }
         }));
@@ -116,6 +116,24 @@ public class Home extends AppCompatActivity {
             }
 
         });
+        //today layout
+        TextView todayscence =(TextView) findViewById(R.id.todayscence) ;
+        Format f = new SimpleDateFormat("EEEE");
+        if(f.format(CalendarDay.today().getDate().getTime()).equals("Monday") || f.format(CalendarDay.today().getDate().getTime()).equals("Thursday")){
+            todayscence.setText("Push day");
+
+        }
+        else if(f.format(CalendarDay.today().getDate().getTime()).equals("Tuesday") || f.format(CalendarDay.today().getDate().getTime()).equals("Friday")){
+            todayscence.setText("Pull day");
+
+        }
+        else if(f.format(CalendarDay.today().getDate().getTime()).equals("Wednesday") || f.format(CalendarDay.today().getDate().getTime()).equals("Saturday")){
+            todayscence.setText("Legs day");
+
+        }
+        else if(f.format(CalendarDay.today().getDate().getTime()).equals("Sunday")){
+            todayscence.setText("Rest day");
+        }
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);

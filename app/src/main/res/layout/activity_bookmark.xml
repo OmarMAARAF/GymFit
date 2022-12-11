@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/searchText"
+        android:id="@+id/bookmarkText"
         android:layout_marginHorizontal="20dp"
         android:textAlignment="center"
         android:layout_marginTop="29dp"
@@ -29,7 +29,49 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/bookmarksListView"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/bookmarkText"
+        android:layout_marginBottom="60dp"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/emptyBookmark"
+        android:layout_below="@+id/bookmarkText"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerVertical="true"
+        >
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:src="@drawable/empty_boookmark"
+            android:id="@+id/emptyBookmarkImage"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            ></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emptyBookmarkTitle"
+            android:text="Add Bookmarks"
+            android:textSize="30dp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/emptyBookmarkImage"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Don't forget to bookmark the exercices you like the most so that you can find them easily over here"
+            android:textSize="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_below="@id/emptyBookmarkTitle"
+            android:layout_marginHorizontal="20dp"/>
+    </RelativeLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

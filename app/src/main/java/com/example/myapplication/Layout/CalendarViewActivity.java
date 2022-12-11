@@ -6,19 +6,16 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
-import com.example.myapplication.fragments.Home;
-import com.example.myapplication.muscle.Muscle;
-import com.example.myapplication.muscle.MuscleListAdapter;
+import com.example.myapplication.Beans.Muscle;
+import com.example.myapplication.Adapters.MuscleListAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
@@ -62,10 +59,6 @@ public class CalendarViewActivity extends AppCompatActivity {
         mcv.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(@NonNull @NotNull MaterialCalendarView widget, @NonNull @NotNull CalendarDay date, boolean selected) {
-
-
-
-
                 if(f.format(date.getDate().getTime()).equals("Monday") || f.format(date.getDate().getTime()).equals("Thursday")){
                     selectedDay.setText(f.format(date.getDate().getTime()));
                     pushLayout.setVisibility(View.VISIBLE);
@@ -73,31 +66,27 @@ public class CalendarViewActivity extends AppCompatActivity {
                     legsLayout.setVisibility(View.INVISIBLE);
                     restLayout.setVisibility(View.INVISIBLE);
                 }
-                if(f.format(date.getDate().getTime()).equals("Tuesday") || f.format(date.getDate().getTime()).equals("Friday")){
+                else if(f.format(date.getDate().getTime()).equals("Tuesday") || f.format(date.getDate().getTime()).equals("Friday")){
                     selectedDay1.setText(f.format(date.getDate().getTime()));
                     pushLayout.setVisibility(View.INVISIBLE);
                     pullLayout.setVisibility(View.VISIBLE);
                     legsLayout.setVisibility(View.INVISIBLE);
                     restLayout.setVisibility(View.INVISIBLE);
-
                 }
-                if(f.format(date.getDate().getTime()).equals("Wednesday") || f.format(date.getDate().getTime()).equals("Saturday")){
+                else if(f.format(date.getDate().getTime()).equals("Wednesday") || f.format(date.getDate().getTime()).equals("Saturday")){
                     selectedDay2.setText(f.format(date.getDate().getTime()));
                     pushLayout.setVisibility(View.INVISIBLE);
                     pullLayout.setVisibility(View.INVISIBLE);
                     legsLayout.setVisibility(View.VISIBLE);
                     restLayout.setVisibility(View.INVISIBLE);
-
                 }
-                if(f.format(date.getDate().getTime()).equals("Sunday")){
+                else if(f.format(date.getDate().getTime()).equals("Sunday")){
                     selectedDay3.setText(f.format(date.getDate().getTime()));
                     pushLayout.setVisibility(View.INVISIBLE);
                     pullLayout.setVisibility(View.INVISIBLE);
                     legsLayout.setVisibility(View.INVISIBLE);
                     restLayout.setVisibility(View.VISIBLE);
-
                 }
-
             }
         });
         mcv.setSelectedDate(CalendarDay.today());

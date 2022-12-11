@@ -1,4 +1,4 @@
-package com.example.myapplication.muscle;
+package com.example.myapplication.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 
 import com.bumptech.glide.Glide;
+import com.example.myapplication.Beans.Muscle;
 import com.example.myapplication.R;
 
 import java.util.List;

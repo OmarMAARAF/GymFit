@@ -7,23 +7,20 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageButton;
-import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
-import com.example.myapplication.DBHelper.DBHelper;
+import com.example.myapplication.DBHelper.Bookmarks;
 import com.example.myapplication.R;
-import com.example.myapplication.fragments.Home;
-import com.example.myapplication.muscle.Muscle;
-import com.example.myapplication.muscle.MuscleListAdapter;
+import com.example.myapplication.Beans.Muscle;
+import com.example.myapplication.Adapters.MuscleListAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -39,8 +36,10 @@ public class BookmarkActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bookmark);
 
         //Connection to db
-        DBHelper DB =new DBHelper(this);
+        Bookmarks DB =new Bookmarks(this);
+        RelativeLayout emptyLayout=(RelativeLayout)findViewById(R.id.emptyBookmark) ;
         list=DB.getAllBookmarks();
+
         List<Muscle> image_details_pull = getListData();
         final SwipeMenuListView listViewBookmark = (SwipeMenuListView) findViewById(R.id.bookmarksListView);
         listViewBookmark.setAdapter(new MuscleListAdapter(BookmarkActivity.this, image_details_pull,"Muscle"));
@@ -111,6 +110,13 @@ public class BookmarkActivity extends AppCompatActivity {
                 return false;
             }
         });
+        //EMpty bookmark
+        if(getListData().isEmpty()){
+            emptyLayout.setVisibility(View.VISIBLE);
+        }
+        else{
+            emptyLayout.setVisibility(View.INVISIBLE);
+        }
         //bottom Nav bar
 
         // Initialize and assign variable
