@@ -65,14 +65,6 @@ public class MuscleListAdapter  extends BaseAdapter {
 
         Muscle muscle = this.listData.get(position);
         holder.name.setText(muscle.getName());
-        /*holder.equipment.setText(muscle.getEquipment());
-        holder.bodyPart.setText("bodyPart: " + muscle.getBodyPart());
-        holder.id.setText("id : "+muscle.getId());
-
-        holder.target.setText("id : "+muscle.getTarget());*/
-        //holder.gifUrl.setImageResource(R.drawable.abs);
-        //Uri uri = Uri.parse("http://d205bpvrqc9yn1.cloudfront.net/0007.gif");
-       // holder.gifUrl.setImageURI(uri);
         Glide.with(context)
                 .asBitmap()
                 .load(muscle.getGifUrl())
