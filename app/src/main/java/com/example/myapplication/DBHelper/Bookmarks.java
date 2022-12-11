@@ -12,17 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bookmarks extends SQLiteOpenHelper {
-    // All Static variables
-    // Database Version
     private static final int DATABASE_VERSION = 1;
-
-    // Database Name
     private static final String DATABASE_NAME = "fitnessData";
-
-    // Country table name
     private static final String TABLE_BOOKMAKS= "bookmarks";
 
-    // Country Table Columns names
+    // Bookmark Table Columns names
     private static final String KEY_ID = "id_bookmark";
     private static final String USER_ID = "id_user";
     private static final String bodyPart = "bodyPart";
@@ -59,7 +53,7 @@ public class Bookmarks extends SQLiteOpenHelper {
      * All CRUD(Create, Read, Update, Delete) Operations
      */
 
-    // Adding new country
+    // Adding new bookmark
     public void addBookmark(Muscle muscle,int userId) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -139,13 +133,6 @@ public class Bookmarks extends SQLiteOpenHelper {
                 new String[] {idBookmark,userId  });
      //   db.close();
     }
-/*
-    // Deleting all countries
-    public void deleteAllCountries() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_BOOKMAKS,null,null);
-        db.close();
-    }*/
 
     // Getting countries Count
     public int getBookmarkssCount() {
