@@ -198,8 +198,8 @@ public class CalendarViewActivity extends AppCompatActivity {
         legsList.add(new Muscle( "cardio", "body weight", "http://d205bpvrqc9yn1.cloudfront.net/3656.gif","3656",  "short stride run", "cardiovascular system"));
         legsList.add(new Muscle(   "upper legs", "barbell", "http://d205bpvrqc9yn1.cloudfront.net/0024.gif", "24", "barbell bench front squat", "quads"));
         legsList.add(new Muscle(  "upper legs", "dumbbell", "http://d205bpvrqc9yn1.cloudfront.net/1757.gif", "1757","dumbbell single leg deadlift", "glutes" ));
-        legsList.add(new Muscle( "upper legs", "dumbbell", "http://d205bpvrqc9yn1.cloudfront.net.2808.gif","2808", "dumbbell sumo pull through", "glutes"  ));
-        legsList.add(new Muscle(  "upper legs", "barbell", "http://d205bpvrqc9yn1.cloudfront.net.0032.gif", "32", "barbell deadlift", "glutes" ));
+        legsList.add(new Muscle( "upper legs", "body weight", "https://d205bpvrqc9yn1.cloudfront.net/1604.gif","1604", "world greatest stretch", "hamstrings"  ));
+        legsList.add(new Muscle(  "upper legs", "barbell", "https://d205bpvrqc9yn1.cloudfront.net/0032.gif", "32", "barbell deadlift", "glutes" ));
         legsList.add(new Muscle(  "upper legs", "trap bar", "http://d205bpvrqc9yn1.cloudfront.net/0811.gif", "811", "trap bar deadlift", "glutes" ));
         legsList.add(new Muscle(  "waist", "body weight", "https://d205bpvrqc9yn1.cloudfront.net/0001.gif", "1", "3/4 sit-up", "abs" ));
         legsList.add(new Muscle(  "waist", "body weight", "https://d205bpvrqc9yn1.cloudfront.net/0003.gif", "3", "air bike", "abs" ));

@@ -25,7 +25,8 @@
         android:layout_below="@id/calendarView"
         android:id="@+id/pushLayout"
         android:layout_marginTop="20dp"
-        android:paddingHorizontal="20dp">
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="60dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,7 +63,8 @@
         android:layout_below="@id/calendarView"
         android:id="@+id/pullLayout"
         android:layout_marginTop="20dp"
-        android:paddingHorizontal="20dp">
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="60dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,7 +101,8 @@
         android:layout_below="@id/calendarView"
         android:id="@+id/legsLayout"
         android:layout_marginTop="20dp"
-        android:paddingHorizontal="20dp">
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="60dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -136,7 +139,8 @@
         android:layout_below="@id/calendarView"
         android:id="@+id/restLayout"
         android:layout_marginTop="20dp"
-        android:paddingHorizontal="20dp">
+        android:paddingHorizontal="20dp"
+        android:layout_marginBottom="60dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

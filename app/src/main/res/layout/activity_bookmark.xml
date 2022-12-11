@@ -44,8 +44,8 @@
         >
 
         <ImageView
-            android:layout_width="350dp"
-            android:layout_height="300dp"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
             android:src="@drawable/empty_boookmark"
             android:id="@+id/emptyBookmarkImage"
             android:layout_marginTop="50dp"
