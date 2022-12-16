@@ -10,7 +10,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/avatr"
-            android:src="@drawable/avtar"
+            android:src="@drawable/av1"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"/>
         <ImageButton
@@ -38,14 +38,14 @@
             android:layout_marginLeft="10dp"
 
         />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-                android:text="Good Morning"
-                android:layout_below="@id/hello"
-                android:layout_toRightOf="@id/avatr"
+            android:layout_below="@id/hello"
             android:layout_marginLeft="10dp"
-                />
+            android:layout_toRightOf="@id/avatr"
+            android:text="Welcome back" />
         <EditText
             android:id="@+id/search_bar"
             android:layout_width="match_parent"

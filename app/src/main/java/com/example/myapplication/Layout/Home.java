@@ -1,6 +1,10 @@
 package com.example.myapplication.Layout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -9,12 +13,14 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.DBHelper.DBHelper;
 import com.example.myapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
@@ -31,10 +37,50 @@ public class Home extends AppCompatActivity {
     Button bicepsBtn;
     ImageButton calendarBtn;
     EditText search_bar;
+    SharedPreferences sharedPreferences;
+    private static final String SHARED_PREF_NAME ="mypref";
+    private static final String KEY_EMAIL = "email";
+    private static final String KEY_SEXE = "sexee";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
+        String email = sharedPreferences.getString(KEY_EMAIL, null);
+
+        String sexee = sharedPreferences.getString(KEY_SEXE, null);
+        if(sexee.equals("female"))
+        {
+            ImageView imgView=(ImageView) findViewById(R.id.avatr);
+            Drawable drawable  = getResources().getDrawable(R.drawable.avatarwomen);
+            imgView.setImageDrawable(drawable);
+        }else if(sexee.equals("Male")){
+            ImageView imgView=(ImageView) findViewById(R.id.avatr);
+            Drawable drawable  = getResources().getDrawable(R.drawable.avatarmen);
+            imgView.setImageDrawable(drawable);
+        }
+
+        DBHelper helper = new DBHelper(this);
+        SQLiteDatabase database = helper.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM users where email = ? ",new String[]{email});
+
+        if(cursor != null)
+        {
+            cursor.moveToNext();
+        }
+
+        StringBuilder builder = new StringBuilder();
+        do{
+            String fullname = cursor.getString(0);
+            builder.append(" " + fullname  + " \uD83D\uDC4B ");
+
+        }while(cursor.moveToNext());
+
+        TextView fullname = (TextView) findViewById(R.id.hello);
+        fullname.setText(builder.toString());
+
         chestBtn =(Button)findViewById(R.id.chestBtn);
         chestBtn.setOnClickListener((new View.OnClickListener() {
             @Override
