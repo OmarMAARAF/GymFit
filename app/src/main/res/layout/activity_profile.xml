@@ -15,6 +15,17 @@
         android:layout_marginBottom="80dp"
         android:background="@drawable/round_rect_shape">
 
+        <ImageButton
+            android:id="@+id/logoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="26dp"
+            android:background="@drawable/image_button_border"
+            android:padding="10dp"
+            android:src="@drawable/logout1" />
+
         <ImageView
             android:id="@+id/avatar"
             android:layout_width="100dp"
@@ -97,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/poppins_regular"
                 android:text="H"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -109,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/poppins_regular"
                 android:text="W"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -121,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/poppins_bold"
+                android:fontFamily="@font/poppins_regular"
                 android:text="A"
                 android:textAlignment="center"
                 android:textColor="@color/black"

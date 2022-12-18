@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     DBHelper myDB;
     SharedPreferences sharedPreferences;
-    TextView RegisterNow;
+    TextView RegisterNow,RegisterFromLogin;
 
     private static final String SHARED_PREF_NAME ="mypref";
     private static final String KEY_EMAIL = "email";
@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btnLogin);
         myDB = new DBHelper(this);
         RegisterNow =(TextView)findViewById(R.id.RegisterFromLogin);
+        RegisterFromLogin =(TextView)findViewById(R.id.RegisterFromLogin);
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
 
@@ -67,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                     {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString(KEY_EMAIL,email.getText().toString());
+                        editor.putString("user","session");
                         editor.apply();
                         //  Toast.makeText(LoginActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(),Home.class);

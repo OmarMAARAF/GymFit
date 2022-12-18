@@ -10,11 +10,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.DBHelper.DBHelper;
 import com.example.myapplication.DBHelper.InfosDB;
+import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -26,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
     SharedPreferences sharedPreferences;
+    ImageButton logoutBtn;
 
     private static final String SHARED_PREF_NAME ="mypref";
     private static final String KEY_EMAIL = "email";
@@ -38,6 +43,17 @@ public class ProfileActivity extends AppCompatActivity {
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(this, gso);
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
+        logoutBtn = (ImageButton) findViewById(R.id.logoutBtn);
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
+                editor.commit();
+                Intent intention = new Intent(ProfileActivity.this, MainActivity.class);
+                startActivity(intention);
+            }
+        });
         String email = sharedPreferences.getString(KEY_EMAIL, null);
         String sexee = sharedPreferences.getString(KEY_SEXE, null);
          if(sexee.equals("female"))
@@ -202,12 +218,7 @@ public class ProfileActivity extends AppCompatActivity {
         {
             String personName = acct.getDisplayName();
             String personEmail = acct.getEmail();
-            //name.setText(personName);
-            //email.setText(personEmail);
         }
-
-        //
-        //-------------------------------------------------------------------------------------
 
 
         //bottom Nav bar

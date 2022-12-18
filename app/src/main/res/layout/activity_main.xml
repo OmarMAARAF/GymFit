@@ -25,16 +25,16 @@
       android:textSize="30sp" />
 
   <LinearLayout
+      android:id="@+id/linear"
       android:layout_width="match_parent"
       android:layout_height="500dp"
-      android:gravity="center"
-      android:id="@+id/linear">
+      android:gravity="center">
 
     <com.denzcoskun.imageslider.ImageSlider
-        android:layout_marginTop="20dp"
         android:id="@+id/imageSlider"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginTop="20dp"
         app:iss_auto_cycle="true"
         app:iss_corner_radius="10"
         app:iss_delay="0"
@@ -42,19 +42,20 @@
         app:iss_title_background="@drawable/gradient" />
 
   </LinearLayout>
+
   <Button
       android:id="@+id/btn1"
       android:layout_width="320dp"
       android:layout_height="wrap_content"
+      android:layout_below="@+id/linear"
       android:layout_marginLeft="50dp"
-      android:layout_marginTop="30dp"
+      android:layout_marginTop="40dp"
       android:layout_marginRight="50dp"
       android:backgroundTint="@color/orange"
       android:gravity="center"
       android:text="Create An Account"
-      android:textSize="20dp"
-      android:layout_below="@+id/linear"
-      />
+      android:textSize="20dp" />
+
   <Button
       android:id="@+id/btn2"
       android:layout_width="320dp"
